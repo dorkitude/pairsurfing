@@ -5,13 +5,19 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
-gem 'mysql2'
+#DB
+gem 'sqlite3' # using this on Heroku for now
+gem 'mysql2' # this is what i'm using locally, so i can see what's going on
+gem 'taps' # this is necessary to allow the "heroku db:push" command to send my SQL contents to heroku's so-called 'shared db'
 
-gem 'taps'
+#BDD (these were recommended in the 'Setting up a Rails Project' section of The RSpec Book)
+gem 'cucumber'
+gem 'rspec-rails'
+gem 'webrat'
 
-gem 'will_paginate'
+#utility
+gem 'will_paginate' # this is a sweet little gem that handles pagination in the models and pagination links in the view
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -12,12 +12,13 @@ gem 'mysql2' # this is what i'm using locally, so i can see what's going on
 gem 'taps' # this is necessary to allow the "heroku db:push" command to send my SQL contents to heroku's so-called 'shared db'
 
 #BDD (these were recommended in the 'Setting up a Rails Project' section of The RSpec Book)
-gem 'cucumber'
-gem 'rspec-rails'
-gem 'webrat'
-
-#utility
-gem 'will_paginate' # this is a sweet little gem that handles pagination in the models and pagination links in the view
+group :development, :test do
+    gem "rspec-rails", ">= 2.0.0"
+    gem "cucumber-rails", ">= 0.3.2" 
+    gem "webrat", ">= 0.7.2"
+    gem "database_cleaner", ">= 0.5.2"
+    gem "selenium-client", ">= 1.2.18"
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
